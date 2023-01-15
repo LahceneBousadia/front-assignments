@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AssignmentsService } from 'src/app/shared/assignments.service';
 import { Assignment } from '../assignment.model';
-import {FormBuilder, Validators} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 //import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
-
 
 @Component({
   selector: 'app-add-assignment',
@@ -16,10 +15,10 @@ export class AddAssignmentComponent implements OnInit {
   nomDevoir = '';
   dateDeRendu!: Date;
   rendu!: boolean;
-  eleve= '';
-  matiere= '';
-  note='';
-  remarques='';
+  eleve = '';
+  matiere = '';
+  note = '';
+  remarques = '';
 
   // Pour le stepper
   firstFormGroup = this._formBuilder.group({
@@ -28,32 +27,44 @@ export class AddAssignmentComponent implements OnInit {
   secondFormGroup = this._formBuilder.group({
     secondCtrl: ['', Validators.required],
   });
- 
+
   thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: ['', Validators.required]
-    });
-fourthFormGroup = this._formBuilder.group({
-      fourthCtrl: ['', Validators.required]
-    });
+    thirdCtrl: ['', Validators.required],
+  });
+  fourthFormGroup = this._formBuilder.group({
+    fourthCtrl: ['', Validators.required],
+  });
   fifthFormGroup = this._formBuilder.group({
-      fifthCtrl: ['', Validators.required]
-    });
-    sixthFormGroup = this._formBuilder.group({
-      sixthCtrl: ['', Validators.required]
-    });
+    fifthCtrl: ['', Validators.required],
+  });
+  sixthFormGroup = this._formBuilder.group({
+    sixthCtrl: ['', Validators.required],
+  });
 
   constructor(
     private assignmentsService: AssignmentsService,
     private router: ActivatedRoute,
     private _formBuilder: FormBuilder
-
   ) {}
 
   ngOnInit(): void {}
 
   onSubmit() {
     console.log(
-      'onSubmit : ' + this.nomDevoir + ' date de rendu : ' + this.dateDeRendu
+      'onSubmit : ' +
+        this.nomDevoir +
+        ' date de rendu : ' +
+        this.dateDeRendu +
+        ' rendu : ' +
+        this.rendu +
+        ' eleve : ' +
+        this.eleve +
+        ' matiere : ' +
+        this.matiere +
+        ' note : ' +
+        this.note +
+        ' remarques : ' +
+        this.remarques
     );
 
     // On ajoute un nouvel assignment
@@ -62,6 +73,11 @@ fourthFormGroup = this._formBuilder.group({
     nouvelAssignment.dateDeRendu = this.dateDeRendu;
     nouvelAssignment.rendu = false;
     nouvelAssignment.id = Math.floor(Math.random() * 1000);
+    nouvelAssignment.eleve = this.eleve;
+    nouvelAssignment.matiere = this.matiere;
+    nouvelAssignment.note = this.note;
+    nouvelAssignment.remarques = this.remarques;
+
     // le tableau est chez le papa comment faire ?
     //this.assignments.push(nouvelAssignment);
 
