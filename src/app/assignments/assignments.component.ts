@@ -11,14 +11,14 @@ import { Assignment } from './assignment.model';
 })
 
 export class AssignmentsComponent implements OnInit {
-  titre = 'Liste des devoirs';
+  titre = 'TABLEAU DES ASSIGNMENTS';
   assignmentSelectionne!: Assignment;
   searchItem!:string;
   search!:String;
 
   //Pour la pagination
   page: number = 1;
-  limit: number = 10;
+  limit: number = 5;
   totalDocs: number = 0;
   totalPages: number = 0;
   hasPrevPage: boolean = false;

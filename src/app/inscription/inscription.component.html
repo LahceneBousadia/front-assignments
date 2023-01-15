@@ -1,7 +1,5 @@
 <mat-card>
-  <mat-card-header>
-    <!-- <h1>PAGE LOGIN</h1> -->
-  </mat-card-header>
+  <mat-card-header> </mat-card-header>
   <mat-card-content>
     <form [formGroup]="inscriptionForm">
       <mat-form-field class="example-full-width" appearance="outline">
@@ -12,14 +10,13 @@
           placeholder="Nom prenom"
           formControlName="nomprenom"
         />
-        <mat-icon matSuffix>person</mat-icon>
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Email</mat-label>
         <input
           type="email"
           matInput
-          placeholder="test@test.com"
+          placeholder="email@email.com"
           formControlName="email"
           ngModel
           email
@@ -43,12 +40,16 @@
           <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
       </mat-form-field>
-      <button class="submit" (click)="inscription()" mat-button>
+      <button
+        id="btn-inscription"
+        class="submit"
+        mat-raised-button
+        color="primary"
+        (click)="inscription()"
+        mat-button
+      >
         Incription
       </button>
-      <!-- <mat-error 
-          >Invalid Credentials, Please try again...</mat-error
--->
     </form>
   </mat-card-content>
 </mat-card>
