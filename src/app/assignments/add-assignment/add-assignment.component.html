@@ -82,9 +82,9 @@
 
   <mat-step [stepControl]="fifthFormGroup">
     <form [formGroup]="fifthFormGroup">
-      <ng-template matStepLabel>matiere</ng-template>
+      <ng-template matStepLabel>Matière</ng-template>
       <mat-form-field appearance="fill">
-        <mat-label>matiere</mat-label>
+        <mat-label>Matière</mat-label>
         <input
           matInput
           [(ngModel)]="matiere"
@@ -101,14 +101,14 @@
   </mat-step>
   <mat-step [stepControl]="sixthFormGroup">
     <form [formGroup]="sixthFormGroup">
-      <ng-template matStepLabel>remarques</ng-template>
+      <ng-template matStepLabel>Remarques</ng-template>
       <mat-form-field appearance="fill">
-        <mat-label>remarques</mat-label>
+        <mat-label>Remarques</mat-label>
         <input
           matInput
-          [(ngModel)]="matiere"
+          [(ngModel)]="remarques"
           formControlName="sixthCtrl"
-          placeholder="matiere"
+          placeholder="remarques"
           required
         />
       </mat-form-field>
@@ -123,7 +123,9 @@
     <p>You are now done.</p>
     <div>
       <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="onSubmit()">Submit</button>
+      <button mat-button (click)="onSubmit(); stepper.reset()">
+        Ajouter le devoir
+      </button>
     </div>
   </mat-step>
 </mat-stepper>

@@ -10,7 +10,7 @@ import { AuthService } from './shared/auth.service';
 })
 
 export class AppComponent {
-  title = 'Gestion des assignments';
+  title = 'GESTION DES ASSIGNMENTS';
 
   constructor(
     private authService: AuthService,

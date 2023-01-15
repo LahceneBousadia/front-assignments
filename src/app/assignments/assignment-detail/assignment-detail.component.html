@@ -1,31 +1,37 @@
-<mat-card *ngIf="assignmentTransmis">
-  <mat-card-title>Nom de l'eleve {{ assignmentTransmis.nom }}</mat-card-title>
-  <mat-card-subtitle>Date {{ assignmentTransmis.dateDeRendu | date}}</mat-card-subtitle>
-   <button mat-raised-button font-color="black" color="warn"><mat-checkbox *ngIf="!assignmentTransmis.rendu" [checked]="assignmentTransmis.rendu" (click)="onAssignmentRendu()">
+<div class="container">
+  <mat-card *ngIf="assignmentTransmis">
+    <mat-card-title>Nom de devoir: <span style="font-style: italic; color:rgb(21, 21, 133);">{{ assignmentTransmis.nom }}</span></mat-card-title>
+    <mat-card-subtitle
+      >Date {{ assignmentTransmis.dateDeRendu | date }}</mat-card-subtitle
+    >
 
-    <strong>RENDU</strong></mat-checkbox>
-  </button>
-  <mat-card-content>
-    <p>Matiere {{ assignmentTransmis.matiere }}</p>
-    <p>Note {{ assignmentTransmis.note }}</p>
-    <p>Rendu {{ assignmentTransmis.rendu }}</p>
-    <p>Remarques {{ assignmentTransmis.remarques }}</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-checkbox-button color="primary" (click)="onAssignmentRendu()">RENDU</button>
-  </mat-card-actions>
+    <mat-card-content>
+      <p><span style="font-weight: bold;">Elève: </span>{{ assignmentTransmis.eleve }}</p>
+      <p><span style="font-weight: bold;">Matiere: </span>{{ assignmentTransmis.matiere }}</p>
+      <p><span style="font-weight: bold;">Note: </span>{{ assignmentTransmis.note }}</p>
+      <p><span style="font-weight: bold;">Rendu: </span>{{ assignmentTransmis.rendu }}</p>
+      <p><span style="font-weight: bold;">Remarques: </span>{{ assignmentTransmis.remarques }}</p>
+    </mat-card-content>
+    <mat-card-actions> </mat-card-actions>
 
-   <div id="bottom"> 
-    
-
-    <nav>
-      <a routerLink="/assignment/{{ assignmentTransmis.id }}/edit">
-        <button mat-raised-button color="primary">EDIT</button>
-      </a>
-    </nav>
-
-    <button mat-raised-button color="warn" (click)="onDeleteAssignment()">
-      DELETE
-    </button>
-   </div>
-</mat-card>
+    <div id="bottom">
+      <nav>
+        <a routerLink="/assignment/{{ assignmentTransmis.id }}/edit">
+          <button mat-raised-button color="primary">EDIT</button>
+        </a>
+      </nav>
+      <button mat-raised-button font-color="black" color="warn">
+        <mat-checkbox
+          *ngIf="!assignmentTransmis.rendu"
+          [checked]="assignmentTransmis.rendu"
+          (click)="onAssignmentRendu()"
+        >
+          <strong>RENDU</strong></mat-checkbox
+        >
+      </button>
+      <button mat-raised-button color="warn" (click)="onDeleteAssignment()">
+        DELETE
+      </button>
+    </div>
+  </mat-card>
+</div>

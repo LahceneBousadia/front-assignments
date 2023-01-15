@@ -1,7 +1,7 @@
 <main class="container">
   <div class="ajouterBtn">
     <button class="peupler" mat-flat-button color="primary"
-    (click)="initialiserLaBaseAvecDonneesDeTest()"> PeuplerBD </button>
+    (click)="initialiserLaBaseAvecDonneesDeTest()"> Peupler BD </button>
     
     <a routerLink="/add">
       <button mat-flat-button color="accent">Ajouter Assignment</button>
@@ -13,11 +13,10 @@
  
   <!--  Affichage de nombre total des assignments et pages-->
   &nbsp;
-  <form style="text-align: left; font-weight:bold;"> Nb total d'assignments : {{ totalDocs }}</form>
-  <form style="text-align: right; font-weight: bold;">Nb total de pages : {{ totalPages }}</form>
-
-  <p id="nbasspage">
-    Nb assignments par page : 1
+  <span style="text-align: left; font-weight:bold;"> Nb total d'assignments : {{ totalDocs }}</span>
+  <span style="text-align: right; font-weight: bold">Nb total de pages : {{ totalPages }}</span>
+  <span style="text-align: center; font-weight: bold">
+    Nombre d'assignments par page : 1
     <input id="slider"
       type="range"
       min="1"
@@ -26,7 +25,8 @@
       (change)="getAssignments()"
       [(ngModel)]="limit"
     />{{ limit }}
-  </p>
+  </span>
+  &nbsp;
   <!--Pour les boutons de pagination-->
   <div class="paginationBtn">
     <button

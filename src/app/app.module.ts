@@ -17,7 +17,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatTabsModule } from '@angular/material/tabs';
 
@@ -33,7 +33,6 @@ import { AuthGuard } from './shared/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
-
 
 const routes: Routes = [
   {
@@ -55,7 +54,6 @@ const routes: Routes = [
   {
     path: 'assignment/:id/edit',
     component: EditAssignmentComponent,
-    canActivate: [AuthGuard],
   },
 ];
 
@@ -72,7 +70,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,Ng2SearchPipeModule,
+    FormsModule,
+    Ng2SearchPipeModule,
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
@@ -90,7 +89,9 @@ const routes: Routes = [
     MatStepperModule,
     MatSelectModule,
     MatTabsModule,
-    MatRadioModule,ReactiveFormsModule,MatToolbarModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

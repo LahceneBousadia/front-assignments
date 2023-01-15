@@ -2,6 +2,18 @@ section {
   display: table;
 }
 
+#title {
+  font-size: 24px;
+  font-weight: 500;
+  padding: 16px 24px;
+  width: 100%;
+  color: white;
+}
+
+#lien{
+  text-decoration:none;
+}
+
 .example-label {
   display: table-cell;
   font-size: 14px;
