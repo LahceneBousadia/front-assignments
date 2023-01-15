@@ -10,7 +10,7 @@ export class AuthService {
   // Dans la vraie vie (dans le projet à faire), on
   // passerait login et password.
   logIn() {
-    this.loggedIn = true;
+    this.loggedIn = false;
   }
 
   logOut() {
