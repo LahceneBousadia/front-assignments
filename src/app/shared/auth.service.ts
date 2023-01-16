@@ -24,11 +24,11 @@ export class AuthService {
   }
 
   inscription(data:any):Observable<any> {
-    return this.http.post('http://localhost:8010/api/inscription',data);
+    return this.http.post('https://backend-api-assignments.herokuapp.com/api/inscription',data);
   }
 
   connexion(data:any):Observable<any> {
-    return this.http.post('http://localhost:8010/api/connexion', data);  
+    return this.http.post('https://backend-api-assignments.herokuapp.com/api/connexion', data);  
   }
 
   constructor(private http:HttpClient) {}
