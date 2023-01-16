@@ -18,3 +18,5 @@ Note sur 20, on ne peut marquer "rendu" un Assignment qui n'a pas été noté. R
 - Formulaire de type Stepper (formulaire en plusieurs étapes) pour l'ajout d'Assignments (éventuellement pour la modification)
 - Toolbar et un slider pour l'affichage des devoirs.
 - Hebergement sur Heroku.
+
+Nous avons suivi plusieurs tutoriels sur YouTube, et aussi on a demandé de l'aide sur l'authentification avec notre collègue Jaiber.
