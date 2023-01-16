@@ -1,7 +1,7 @@
 # Etapes à suivre pour lancer le Front
-cd front-assignments
-npm install
-ng serve
+- cd front-assignments
+- npm install
+- ng serve
 
 # ReadMe
 Le projet est une plateforme web crée par : 
